@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Card Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,114 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yak-OK-zw1">
+                                <rect key="frame" x="268" y="252" width="64" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="88d-J0-fkS"/>
+                                    <constraint firstAttribute="width" constant="64" id="QSo-j2-I5P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" backgroundImage="cardback">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="88d-J0-fkS"/>
+                                        <exclude reference="QSo-j2-I5P"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="88d-J0-fkS"/>
+                                        <include reference="QSo-j2-I5P"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="168" y="352" width="64" height="96"/>
+                                </variation>
+                                <connections>
+                                    <action selector="touchCardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S7Q-MU-4HU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keS-s4-UV7">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="368" id="cjI-4v-dVt"/>
+                                    <constraint firstAttribute="height" constant="21" id="ze2-Gm-v1x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cjI-4v-dVt"/>
+                                        <exclude reference="ze2-Gm-v1x"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="cjI-4v-dVt"/>
+                                        <include reference="ze2-Gm-v1x"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Yak-OK-zw1" secondAttribute="centerX" id="Hfn-5h-evu"/>
+                            <constraint firstAttribute="centerY" secondItem="Yak-OK-zw1" secondAttribute="centerY" id="PXD-OT-myt"/>
+                            <constraint firstAttribute="centerY" secondItem="Yak-OK-zw1" secondAttribute="centerY" id="Vje-oq-j8d"/>
+                            <constraint firstAttribute="centerX" secondItem="Yak-OK-zw1" secondAttribute="centerX" id="XdW-Lv-Prb"/>
+                            <constraint firstItem="keS-s4-UV7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dhH-Pl-Zfm"/>
+                            <constraint firstItem="keS-s4-UV7" firstAttribute="centerX" secondItem="Yak-OK-zw1" secondAttribute="centerX" id="i82-Bf-Mhz"/>
+                            <constraint firstAttribute="bottom" secondItem="keS-s4-UV7" secondAttribute="bottom" constant="20" symbolic="YES" id="myN-YV-x1B" userLabel="Vertial Alignment - Flips: 0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="keS-s4-UV7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Hfn-5h-evu"/>
+                                <exclude reference="PXD-OT-myt"/>
+                                <exclude reference="Vje-oq-j8d"/>
+                                <exclude reference="XdW-Lv-Prb"/>
+                                <exclude reference="dhH-Pl-Zfm"/>
+                                <exclude reference="i82-Bf-Mhz"/>
+                                <exclude reference="myN-YV-x1B"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="PXD-OT-myt"/>
+                                <include reference="XdW-Lv-Prb"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="keS-s4-UV7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Hfn-5h-evu"/>
+                                <include reference="Vje-oq-j8d"/>
+                                <include reference="dhH-Pl-Zfm"/>
+                                <include reference="i82-Bf-Mhz"/>
+                                <include reference="myN-YV-x1B"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="flipsLabel" destination="keS-s4-UV7" id="IEj-Ac-vfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="cardback" width="64" height="96"/>
+    </resources>
 </document>

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "PlayingCardDeck.h"
 
 @interface CardGameTests : XCTestCase
 
@@ -27,7 +28,9 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    PlayingCardDeck *deck = [[PlayingCardDeck alloc] init];
+    Card *card = [deck drawRandomCard];
+    XCTAssertNotNil(card);
 }
 
 - (void)testPerformanceExample {
