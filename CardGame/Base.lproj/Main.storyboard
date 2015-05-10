@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -56,7 +57,7 @@
                                     <constraint firstAttribute="height" constant="21" id="ze2-Gm-v1x"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -69,6 +70,15 @@
                                         <include reference="cjI-4v-dVt"/>
                                         <include reference="ze2-Gm-v1x"/>
                                     </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYl-5W-SAN">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="179" y="28" width="42" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -85,15 +95,16 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="keS-s4-UV7"/>
+                                <exclude reference="eYl-5W-SAN"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dhH-Pl-Zfm"/>
+                                <exclude reference="i82-Bf-Mhz"/>
+                                <exclude reference="myN-YV-x1B"/>
                                 <exclude reference="Hfn-5h-evu"/>
                                 <exclude reference="PXD-OT-myt"/>
                                 <exclude reference="Vje-oq-j8d"/>
                                 <exclude reference="XdW-Lv-Prb"/>
-                                <exclude reference="dhH-Pl-Zfm"/>
-                                <exclude reference="i82-Bf-Mhz"/>
-                                <exclude reference="myN-YV-x1B"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -107,11 +118,16 @@
                                 <include reference="keS-s4-UV7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Hfn-5h-evu"/>
-                                <include reference="Vje-oq-j8d"/>
                                 <include reference="dhH-Pl-Zfm"/>
                                 <include reference="i82-Bf-Mhz"/>
                                 <include reference="myN-YV-x1B"/>
+                                <include reference="Hfn-5h-evu"/>
+                                <include reference="Vje-oq-j8d"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="eYl-5W-SAN"/>
                             </mask>
                         </variation>
                     </view>
